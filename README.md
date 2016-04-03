@@ -119,6 +119,10 @@ check = $(file $1 |cut -d " " -f 2)
 case $check in
 "ASCII")
 echo "xx"
+break
+;;
+*)
+echo 'wrong'
 ;;
 esac
 shift
@@ -135,5 +139,31 @@ while [$count -gt 0 ];do
 let count = $count-1
 done
 ```
+#####menus
+######first simple
+```
+var = "a b c"
+select x in $x; do
 
+done
+```
 
+$REPLY is digit. x is always actual value in var list.
+
+######cron
+```
+vim /etc/cron.d/weekly-bins
+```
+#####troubleshooting
+######exit
+exit status=2 not root  
+exit status=3 no args
+exit status= out of disk space
+######xtrace
+```
+bash +x ./xxx.sh
+```
+```
+set +x   (xtrace on)
+set -x    (xtrace off)
+```
